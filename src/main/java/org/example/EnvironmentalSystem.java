@@ -8,6 +8,7 @@ public class EnvironmentalSystem {
 private TemperatureFeed temp;
 private HumidityFeed Humid;
 private PollutionFeed Pollution;
+private boolean status;
     public TemperatureFeed getTempFeed() {
         return temp;
     }
@@ -28,8 +29,8 @@ private PollutionFeed Pollution;
 
     public boolean isHeatingOn(int wardID) {
         if (turnHeatingOn(int wardID, boolean on)
-        boolean status;
-        return status)
+            return status
+        );
         
     }
 

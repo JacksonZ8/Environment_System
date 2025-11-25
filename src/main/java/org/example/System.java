@@ -10,14 +10,8 @@ import java.awt.event.ActionListener;
 import java.io.PrintStream;
 
 public class System extends JPanel {
-    private static final float NORTH_WARD_TEMP = 23.0f;
-    private static final float CENTRAL_WARD_TEMP = 22.0f;
-    private static final float SOUTH_WARD_TEMP = 20.0f;
-    private static final float TEMP_TOLERANCE = 0.5f;
-    private static final int HUMIDITY_THRESHOLD = 10;
-    private static final float POLLUTION_THRESHOLD = 5.0f;
-    private static PrintStream out;
 
+    private static PrintStream out;
     private final EnvironmentalSystem envSystem;
     private final TemperatureFeed tempFeed;
     private final HumidityFeed humidityFeed;
@@ -48,9 +42,9 @@ public class System extends JPanel {
 
     private void updateReadings() {
         StringBuilder status = new StringBuilder("<html>");
-        updateWardStatus(status, 0, "North Ward", NORTH_WARD_TEMP);
-        updateWardStatus(status, 1, "Central Ward", CENTRAL_WARD_TEMP);
-        updateWardStatus(status, 2, "South Ward", SOUTH_WARD_TEMP);
+        updateWardStatus(status, 0, "North Ward", tempFeed.getTemperatureideal(0));
+        updateWardStatus(status, 1, "Central Ward", tempFeed.getTemperatureideal(1));
+        updateWardStatus(status, 2, "South Ward", tempFeed.getTemperatureideal(2));
         updateHumidityStatus(status);
         updatePollutionStatus(status);
         status.append("</html>");
