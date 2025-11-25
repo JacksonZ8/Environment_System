@@ -35,10 +35,16 @@ private boolean status;
     }
 
     public boolean isDehumudifierOn() {
+        if (turnDehumudifierOn(int wardID, boolean on)
+        return status
+        );
         return status;
     }
 
     public boolean isAirPurifierOn(){
+        if (turnAirPurifierOn(int wardID, boolean on)
+        return status
+        );
         return status;
     }
 
